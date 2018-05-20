@@ -4,7 +4,7 @@ protocol <%= name %>ViewProtocol: class {
     func showItems(items: [WarikanItem])
 }
 
-class ListViewController: UIViewController, <%= name %>ViewProtocol {
+class <%= name %>ViewController: UIViewController, <%= name %>ViewProtocol {
     private var presenter: <%= name %>PresenterProtocol!
     
     func setPresenter(presenter: ListViewPresenterProtocol) {
