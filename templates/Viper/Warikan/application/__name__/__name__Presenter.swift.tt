@@ -1,0 +1,23 @@
+import Foundation
+import RxSwift
+import RxCocoa
+
+protocol <%= name %>PresenterProtocol: class {
+}
+
+class <%= name %>Presenter: <%= name %>PresenterProtocol {
+    private let interactorOutput: <%= name %>InteractorOutput
+    private let router: <%= name %>RouterProtocol
+    private weak var view: <%= name %>Protocol!
+    private let disposeBag: DisposeBag
+
+    init(view: <%= name %>Protocol, interactorFactory: (<%= name %>InteractorInput, DisposeBag) -> <%= name %>InteractorOutput, router: <%= name %>RouterProtocol) {
+        let disposeBag = DisposeBag()
+        let interactorInput = <%= name %>InteractorInput()
+        let interactorOutput = interactorFactory(interactorInput, disposeBag)
+        self.interactorOutput = interactorOutput
+        self.router = router
+        self.view = view
+        self.disposeBag = disposeBag
+    }
+}

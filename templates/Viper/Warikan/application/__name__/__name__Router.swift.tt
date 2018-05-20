@@ -1,0 +1,11 @@
+import UIKit
+
+protocol <%= name %>RouterProtocol: class {
+}
+
+class <%= name %>Router: <%= name %>RouterProtocol {
+    weak var viewController: UIViewController!
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+}

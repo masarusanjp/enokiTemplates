@@ -1,0 +1,16 @@
+import UIKit
+import RxSwift
+import RxCocoa
+
+struct <%= name %>InteractorInput {
+}
+
+protocol <%= name %>InteractorOutput: class {
+}
+
+class <%= name %>Interactor: <%= name %>InteractorOutput {
+    private let disposeBag: DisposeBag
+    init(input: <%= name %>InteractorInput, disposeBag: DisposeBag) {
+        self.disposeBag = disposeBag
+    }
+}

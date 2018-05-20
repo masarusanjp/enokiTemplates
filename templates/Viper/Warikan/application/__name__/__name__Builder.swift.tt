@@ -1,0 +1,15 @@
+import UIKit
+import RxSwift
+
+class <%= name %>ViewBuilder {
+    func makeViewController() -> UIViewController {
+        let view = <%= name %>ViewController(nibName: nil, bundle: nil)
+        let interactorFactory: (<%= name %>InteractorInput, DisposeBag) -> <%= name %>InteractorOutput = { input, disposeBag in
+            return <%= name %>Interactor(input: input, disposeBag: disposeBag)
+        }
+        let router = <%= name %>Router(viewController: view)
+        let presenter = <%= name %>Presenter(view: view, interactorFactory: interactorFactory, router: router)
+        view.setPresenter(presenter: presenter)
+        return view
+    }
+}
