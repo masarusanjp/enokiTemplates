@@ -11,7 +11,7 @@ class <%= name %>Presenter: <%= name %>PresenterProtocol {
     private weak var view: <%= name %>Protocol!
     private let disposeBag: DisposeBag
 
-    init(view: <%= name %>Protocol, interactorFactory: (<%= name %>InteractorInput, DisposeBag) -> <%= name %>InteractorOutput, router: <%= name %>RouterProtocol) {
+    init(view: <%= name %>ViewProtocol, interactorFactory: (<%= name %>InteractorInput, DisposeBag) -> <%= name %>InteractorOutput, router: <%= name %>RouterProtocol) {
         let disposeBag = DisposeBag()
         let interactorInput = <%= name %>InteractorInput()
         let interactorOutput = interactorFactory(interactorInput, disposeBag)
