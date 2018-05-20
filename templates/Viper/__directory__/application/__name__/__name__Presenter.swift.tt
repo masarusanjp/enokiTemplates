@@ -8,7 +8,7 @@ protocol <%= name %>PresenterProtocol: class {
 class <%= name %>Presenter: <%= name %>PresenterProtocol {
     private let interactorOutput: <%= name %>InteractorOutput
     private let router: <%= name %>RouterProtocol
-    private weak var view: <%= name %>Protocol!
+    private weak var view: <%= name %>ViewProtocol!
     private let disposeBag: DisposeBag
 
     init(view: <%= name %>ViewProtocol, interactorFactory: (<%= name %>InteractorInput, DisposeBag) -> <%= name %>InteractorOutput, router: <%= name %>RouterProtocol) {
