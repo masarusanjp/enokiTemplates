@@ -1,7 +1,6 @@
 import UIKit
 
 protocol <%= name %>ViewProtocol: class {
-    func showItems(items: [WarikanItem])
 }
 
 class <%= name %>ViewController: UIViewController, <%= name %>ViewProtocol {
